@@ -1,0 +1,26 @@
+Problem fixed: Using ItemArray
+	the current list creator uses item details
+	item details
+		item name
+		item image
+	The problem is that names and images are manually entered through serialized fields in unity
+	
+	I need for the names and images to always be associated with eachother through two similarly indexed arrays
+		name = 		{1		2		...}
+		sprite = 	{battery_DU	Battery_UD	...}
+
+
+
+After that, we use LevelSettings with an activation bool list
+	AllowedSprites = 1010010100100100111101010011...
+	If there's a one at that index, then allow that sprite to be used and put it in the list
+
+	I also want LevelSettings to be automatically loaded instead of entered in the editor
+	I think I can associate the LevelSettings using an ID
+
+
+The ListCreator uses a serializedfield for number of items, which is manually entered
+	it should be the number of 1s in the bitmap for AllowedSprites
+
+
+Community mode doesn't make a new scene for every level, it just loads the levelsettings to be used
