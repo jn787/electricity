@@ -11,7 +11,6 @@ public class TabSelector : MonoBehaviour
     [SerializeField]
     private GameObject[] Toolboxes = new GameObject[5];
 
-    //Set default to first toolbox: wires
     int currentToolbox;
 
     void openToolBox(CoolGUICreator.toolCategory toolType)
@@ -30,11 +29,5 @@ public class TabSelector : MonoBehaviour
         Capacitors_Button.onClick.AddListener(delegate { openToolBox(CoolGUICreator.toolCategory.Capacitor); });
         Resistors_Button.onClick.AddListener(delegate { openToolBox(CoolGUICreator.toolCategory.Resistor); });
         Switches_Button.onClick.AddListener(delegate { openToolBox(CoolGUICreator.toolCategory.Switch); });
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
