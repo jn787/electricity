@@ -7,7 +7,6 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField]
     private int nextScene;
-
     public void LoadNextScene()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;

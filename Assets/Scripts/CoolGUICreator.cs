@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+//There are tools of 5 categories
+//each GUICreator is a toolbox that holds all tools from one of those categories
 public class CoolGUICreator : MonoBehaviour
 {
+    //position of where prefab buttons should be instantiated from
     [SerializeField]
     private Transform SpawnPoint = null;
 
@@ -30,6 +34,7 @@ public class CoolGUICreator : MonoBehaviour
         Switch
     }
 
+    //Use this to set the category of tools this GUICreator will draw
     [SerializeField]
     private toolCategory ToolType;
 
@@ -50,7 +55,11 @@ public class CoolGUICreator : MonoBehaviour
         buttonA[iteration].onClick.AddListener(delegate { tileSetter.SetSelection(value); });
     }
 
-    //These are not exactly lightweight operations, but since it only happens once per scene load, it should be fine
+    //when the panel that holds this script is activated through the tab selection
+    //  iterates through all tiles
+    //  adds tiles that belong to its tooltype into its list of tools
+    //  draws tools with button prefabs
+    //      assigns onclick listeners to button prefabs
     void Start()
     {
         spriteArray = Resources.LoadAll<Sprite>("ElecComponent");

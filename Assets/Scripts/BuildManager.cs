@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 
+//allows user to interact with placed tiles
+// m1: place
+// m2: delete
+// mouse wheel: rotate
+// m3: toggle
 public class BuildManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +20,7 @@ public class BuildManager : MonoBehaviour
 
     public int selectedTile = 0;
 
+    //used whenever tool button is clicked
     public void SetSelection(int selection)
     {
         selectedTile = selection;
@@ -42,7 +48,6 @@ public class BuildManager : MonoBehaviour
             }
         }
 
-        //get tile, transform the to something else based on retrieved value
         if (Input.mouseScrollDelta.y > 0)
         {
             Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);

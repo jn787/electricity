@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//used to manage the active toolbox
+//only one can be active at a time
 public class TabSelector : MonoBehaviour
 {
     [SerializeField]
